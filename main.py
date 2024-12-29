@@ -36,8 +36,20 @@ def get_student_name(barcode_id):
         result = cursor.fetchone()
         return result[0] if result else None
 
+# Funktion zum Testen der Kamera
+def test_camera():
+    cap = cv2.VideoCapture(0)  # Standardkamera verwenden
+    if not cap.isOpened():
+        return False
+    cap.release()
+    return True
+
 # Live-Scanner starten
 def start_scanner():
+    if not test_camera():
+        st.error("Kamera konnte nicht geöffnet werden. Bitte überprüfe die Kameraeinstellungen.")
+        return
+    
     cap = cv2.VideoCapture(0)  # Kamera starten
     if not cap.isOpened():
         st.error("Kamera konnte nicht geöffnet werden. Bitte überprüfe die Kameraeinstellungen.")
@@ -55,23 +67,18 @@ def start_scanner():
             st.error("Fehler beim Lesen des Kamerabildes.")
             break
 
-        # Barcode-Erkennung mit OpenCV QRCodeDetector
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        detector = cv2.QRCodeDetector()
-
-        # QR-Code scannen
-        retval, decoded_info, points, straight_qrcode = detector.detectAndDecodeMulti(gray)
-
-        for barcode in decoded_info:
-            student_name = get_student_name(barcode)
+        barcodes = decode(frame)
+        for barcode in barcodes:
+            barcode_data = barcode.data.decode('utf-8')
+            student_name = get_student_name(barcode_data)
 
             # Rahmen um den Barcode zeichnen
-            pts = np.array(points[0], np.int32).reshape((-1, 1, 2))
+            pts = np.array(barcode.polygon, np.int32).reshape((-1, 1, 2))
             cv2.polylines(frame, [pts], True, (0, 255, 0), 2)
 
             # Ergebnistext anzeigen
-            text = f"{student_name} ({barcode})" if student_name else f"Unbekannt ({barcode})"
-            cv2.putText(frame, text, (points[0][0][0], points[0][0][1] - 10), 
+            text = f"{student_name} ({barcode_data})" if student_name else f"Unbekannt ({barcode_data})"
+            cv2.putText(frame, text, (barcode.rect.left, barcode.rect.top - 10), 
                         cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 2)
 
             # Schüler gefunden -> anzeigen und stoppen
@@ -81,7 +88,7 @@ def start_scanner():
                 st.success(f"Schüler erkannt: **{student_name}**")
                 break
 
-        # Live-Kamerastream anzeigen
+        # Live-Kamerastream anzeigen (Aktualisierte Methode)
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame_placeholder.image(frame_rgb, channels="RGB", use_container_width=True)
 
