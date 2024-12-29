@@ -1,7 +1,6 @@
 import streamlit as st
 import sqlite3
 import cv2
-from pyzbar.pyzbar import decode
 import numpy as np
 
 # Datenbank erstellen/verwalten
@@ -56,18 +55,23 @@ def start_scanner():
             st.error("Fehler beim Lesen des Kamerabildes.")
             break
 
-        barcodes = decode(frame)
-        for barcode in barcodes:
-            barcode_data = barcode.data.decode('utf-8')
-            student_name = get_student_name(barcode_data)
+        # Barcode-Erkennung mit OpenCV QRCodeDetector
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        detector = cv2.QRCodeDetector()
+
+        # QR-Code scannen
+        retval, decoded_info, points, straight_qrcode = detector.detectAndDecodeMulti(gray)
+
+        for barcode in decoded_info:
+            student_name = get_student_name(barcode)
 
             # Rahmen um den Barcode zeichnen
-            pts = np.array(barcode.polygon, np.int32).reshape((-1, 1, 2))
+            pts = np.array(points[0], np.int32).reshape((-1, 1, 2))
             cv2.polylines(frame, [pts], True, (0, 255, 0), 2)
 
             # Ergebnistext anzeigen
-            text = f"{student_name} ({barcode_data})" if student_name else f"Unbekannt ({barcode_data})"
-            cv2.putText(frame, text, (barcode.rect.left, barcode.rect.top - 10), 
+            text = f"{student_name} ({barcode})" if student_name else f"Unbekannt ({barcode})"
+            cv2.putText(frame, text, (points[0][0][0], points[0][0][1] - 10), 
                         cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 2)
 
             # Schüler gefunden -> anzeigen und stoppen
@@ -77,7 +81,7 @@ def start_scanner():
                 st.success(f"Schüler erkannt: **{student_name}**")
                 break
 
-        # Live-Kamerastream anzeigen (Aktualisierte Methode)
+        # Live-Kamerastream anzeigen
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame_placeholder.image(frame_rgb, channels="RGB", use_container_width=True)
 
