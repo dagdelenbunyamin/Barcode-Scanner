@@ -1,7 +1,6 @@
 import streamlit as st
 import sqlite3
 import cv2
-from pyzbar.pyzbar import decode
 import numpy as np
 
 # Datenbank erstellen/verwalten
@@ -37,6 +36,15 @@ def get_student_name(barcode_id):
         result = cursor.fetchone()
         return result[0] if result else None
 
+# Barcode mit OpenCV scannen
+def scan_barcode(frame):
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # Barcode-Erkennung mit OpenCV (Zxing oder Dlib können auch verwendet werden)
+    detector = cv2.QRCodeDetector()
+    retval, decoded_info, points, straight_qrcode = detector.detectAndDecodeMulti(gray)
+
+    return decoded_info
+
 # Live-Scanner starten
 def start_scanner():
     cap = cv2.VideoCapture(0)  # Kamera starten
@@ -56,12 +64,12 @@ def start_scanner():
             st.error("Fehler beim Lesen des Kamerabildes.")
             break
 
-        barcodes = decode(frame)
+        barcodes = scan_barcode(frame)
         for barcode in barcodes:
-            barcode_data = barcode.data.decode('utf-8')
+            barcode_data = barcode
             student_name = get_student_name(barcode_data)
 
-            # Rahmen um den Barcode zeichnen
+            # Rahmen um den Barcode zeichnen (optional)
             pts = np.array(barcode.polygon, np.int32).reshape((-1, 1, 2))
             cv2.polylines(frame, [pts], True, (0, 255, 0), 2)
 
