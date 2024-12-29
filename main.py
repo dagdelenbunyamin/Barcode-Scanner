@@ -39,10 +39,8 @@ def get_student_name(barcode_id):
 # Barcode mit OpenCV scannen
 def scan_barcode(frame):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    # Barcode-Erkennung mit OpenCV (Zxing oder Dlib können auch verwendet werden)
     detector = cv2.QRCodeDetector()
     retval, decoded_info, points, straight_qrcode = detector.detectAndDecodeMulti(gray)
-
     return decoded_info
 
 # Live-Scanner starten
@@ -58,7 +56,7 @@ def start_scanner():
     scanned_student = None
     frame_placeholder = st.empty()
 
-    while not stop_button:
+    while True:
         ret, frame = cap.read()
         if not ret:
             st.error("Fehler beim Lesen des Kamerabildes.")
@@ -81,13 +79,16 @@ def start_scanner():
             # Schüler gefunden -> anzeigen und stoppen
             if student_name:
                 scanned_student = student_name
-                stop_button = True
                 st.success(f"Schüler erkannt: **{student_name}**")
+                stop_button = True
                 break
 
-        # Live-Kamerastream anzeigen (Aktualisierte Methode)
+        # Live-Kamerastream anzeigen
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame_placeholder.image(frame_rgb, channels="RGB", use_container_width=True)
+
+        if stop_button:
+            break
 
     cap.release()
     cv2.destroyAllWindows()
