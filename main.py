@@ -1,6 +1,7 @@
 import streamlit as st
 import sqlite3
 import cv2
+from pyzbar.pyzbar import decode
 import numpy as np
 
 # Datenbank erstellen/verwalten
@@ -36,20 +37,8 @@ def get_student_name(barcode_id):
         result = cursor.fetchone()
         return result[0] if result else None
 
-# Funktion zum Testen der Kamera
-def test_camera():
-    cap = cv2.VideoCapture(0)  # Standardkamera verwenden
-    if not cap.isOpened():
-        return False
-    cap.release()
-    return True
-
 # Live-Scanner starten
 def start_scanner():
-    if not test_camera():
-        st.error("Kamera konnte nicht geöffnet werden. Bitte überprüfe die Kameraeinstellungen.")
-        return
-    
     cap = cv2.VideoCapture(0)  # Kamera starten
     if not cap.isOpened():
         st.error("Kamera konnte nicht geöffnet werden. Bitte überprüfe die Kameraeinstellungen.")
