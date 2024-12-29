@@ -3,14 +3,6 @@ import sqlite3
 import cv2
 from pyzbar.pyzbar import decode
 import numpy as np
-from pyzbar.zbar_library import load
-
-# Zbar-Überprüfung
-try:
-    load()
-except ImportError:
-    st.error("Die 'zbar'-Bibliothek ist nicht installiert oder konnte nicht geladen werden. Bitte installieren Sie die erforderliche Bibliothek, um die Anwendung auszuführen.")
-    st.stop()
 
 # Datenbank erstellen/verwalten
 def initialize_database():
@@ -49,7 +41,7 @@ def get_student_name(barcode_id):
 def start_scanner():
     cap = cv2.VideoCapture(0)  # Kamera starten
     if not cap.isOpened():
-        st.error("Kamera konnte nicht geöffnet werden. Bitte überprüfen Sie die Kameraeinstellungen.")
+        st.error("Kamera konnte nicht geöffnet werden. Bitte überprüfe die Kameraeinstellungen.")
         return
 
     st.write("**Drücke 'Scanner stoppen', um den Scanner zu beenden.**")
