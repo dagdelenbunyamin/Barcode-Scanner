@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import cv2
 import numpy as np
+from pyzbar.pyzbar import decode
 import sqlite3
 
 # Datenbank erstellen/verwalten
@@ -37,15 +38,14 @@ def get_student_name(barcode_id):
         result = cursor.fetchone()
         return result[0] if result else None
 
-# Barcode aus einem Bild scannen
+# Barcode aus einem Bild scannen mit pyzbar
 def process_image(uploaded_file):
     image = Image.open(uploaded_file)
     image_np = np.array(image)
-    gray = cv2.cvtColor(image_np, cv2.COLOR_BGR2GRAY)
-    # Barcode-Erkennung mit OpenCV
-    detector = cv2.QRCodeDetector()
-    retval, decoded_info, points, straight_qrcode = detector.detectAndDecodeMulti(gray)
-    return decoded_info
+    # Barcode-Erkennung mit pyzbar
+    decoded_barcodes = decode(image_np)
+    barcodes = [barcode.data.decode('utf-8') for barcode in decoded_barcodes]
+    return barcodes
 
 # Haupt-App
 def main():
