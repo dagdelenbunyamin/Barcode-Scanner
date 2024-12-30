@@ -20,7 +20,7 @@ Erstelle eine virtuelle Umgebung (optional):
 ```bash
 python -m venv venv
 
-##### Aktiviere die virtuelle Umgebung:
+#### Aktiviere die virtuelle Umgebung:
 
 - `Windows:`
 .\venv\Scripts\activate
