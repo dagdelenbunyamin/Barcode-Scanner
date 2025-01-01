@@ -1,4 +1,5 @@
 streamlit
-opencv
+opencv-python
 pyzbar
 numpy
+Pillow
