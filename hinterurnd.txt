@@ -21,3 +21,28 @@ WantedBy=multi-user.target
 
 4. Überprüfe den Status:
    systemctl status localtunnel.service
+
+---
+streamlit :
+
+
+Anwendung starten ohne Anmeldung
+Nutze systemd, um sicherzustellen, dass der Barcode-Scanner automatisch beim Serverstart ausgeführt wird:
+    1. Erstelle eine Service-Datei: 
+       sudo nano /etc/systemd/system/barcode-scanner.service
+    2. Inhalt der Datei: 
+       [Unit]
+       Description=Barcode Scanner Service
+       After=network.target
+       
+       [Service]
+       ExecStart=/bin/bash /pfad/zu/deinem/skript.sh
+       Restart=always
+       User=dein-benutzername
+       Group=deine-gruppe
+       
+       [Install]
+       WantedBy=multi-user.target
+    3. Aktiviere und starte den Dienst: 
+       sudo systemctl enable barcode-scanner
+       sudo systemctl start barcode-scanner
