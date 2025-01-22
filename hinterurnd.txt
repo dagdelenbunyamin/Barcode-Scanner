@@ -1,0 +1,23 @@
+1. Erstelle einen Systemd-Dienst:
+   sudo nano /etc/systemd/system/localtunnel.service
+
+2. Füge Folgendes ein:
+[Unit]
+Description=LocalTunnel Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/lt --port 8501 --subdomain flb-barcode-scanner
+Restart=always
+User=bunyamin
+WorkingDirectory=/home/bunyamin/Schule/Barcode
+
+[Install]
+WantedBy=multi-user.target
+
+3. Speicher die Datei und aktiviere den Dienst:
+   sudo systemctl enable localtunnel.service
+   sudo systemctl start localtunnel.service
+
+4. Überprüfe den Status:
+   systemctl status localtunnel.service
