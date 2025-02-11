@@ -92,63 +92,71 @@ def impressum():
 def datenschutz():
     st.title("🔒 Datenschutz")
     st.markdown("""
-    **Datenschutzerklärung:**
-    
-## 1. Einleitung
-Wir nehmen den Schutz Ihrer personenbezogenen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie darüber, welche Daten durch die **Barcode-Scanner-Anwendung für Schülerregistrierung** verarbeitet werden, zu welchem Zweck dies geschieht und welche Rechte Sie als betroffene Person haben.
+    **Datenschutzerklärung**
 
-Diese Anwendung wurde mit **Streamlit** entwickelt, einem Open-Source-Framework für Python-basierte Webanwendungen, das Sicherheit und Datenschutz gewährleistet.
+    Der Schutz Ihrer personenbezogenen Daten ist uns ein besonderes Anliegen. Nachfolgend möchten wir Sie darüber informieren, welche Daten im Rahmen der Nutzung der **Barcode-Scanner-Anwendung für Schülerregistrierung** verarbeitet werden, zu welchem Zweck diese erhoben werden und welche Rechte Ihnen als betroffene Person gemäß der Datenschutz-Grundverordnung (DSGVO) zustehen.
 
-## 2. Verantwortliche Stelle
-Verantwortlich für die Verarbeitung personenbezogener Daten im Rahmen dieser Anwendung ist:
+    Diese Anwendung wurde mit **Streamlit** entwickelt, einem Open-Source-Framework für Python-basierte Webanwendungen, das hohe Sicherheitsstandards erfüllt.
 
-- **Bünyamin Dagdelen**  
-- **Im Johdorf 1**  
-- **53227 Bonn**  
-- **+49 152 01476523**  
+    ## 1. Verantwortliche Stelle
 
-Falls Sie Fragen zum Datenschutz haben, können Sie sich jederzeit an die oben genannte Stelle wenden.
+    Die verantwortliche Stelle für die Erhebung, Verarbeitung und Nutzung Ihrer personenbezogenen Daten im Rahmen dieser Anwendung ist:
 
-## 3. Erhobene Daten und Verarbeitungszweck
-Unsere Anwendung verarbeitet nur die Daten, die für die Schülerregistrierung notwendig sind:
+    **Bünyamin Dagdelen**  
+    Im Johdorf 1  
+    53227 Bonn  
+    Deutschland  
+    E-Mail: [dagdelenbunyamin023@gmail.com](mailto:dagdelenbunyamin023@gmail.com)  
+    Telefon: +49 152 01476523
 
-- **Barcode-ID**: Identifikation des Schülers
-- **Schülername**: Zuordnung zur Barcode-ID
-- **Zeitstempel (optional)**: Dokumentation des Scan-Vorgangs
+    Wenn Sie Fragen zum Thema Datenschutz haben, können Sie sich jederzeit an die oben genannte Kontaktadresse wenden.
 
-Die Datenverarbeitung erfolgt ausschließlich **lokal auf dem Gerät**, auf dem die Anwendung ausgeführt wird. Eine Weitergabe an Dritte oder externe Server erfolgt **nicht**.
+    ## 2. Erhobene Daten und Verarbeitungszwecke
 
-## 4. Speicherung und Löschung der Daten
-- Alle erfassten Daten werden **lokal in einer SQLite-Datenbank gespeichert**.
-- Daten bleiben gespeichert, bis sie manuell gelöscht werden oder die Anwendung deinstalliert wird.
-- Auf Wunsch können Schülerdaten aus der Datenbank entfernt werden.
+    Wir erheben und verarbeiten ausschließlich die personenbezogenen Daten, die für die Nutzung der Barcode-Scanner-Anwendung erforderlich sind:
 
-## 5. Sicherheit und Schutz der Daten
-Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten vor Manipulation, Verlust oder unbefugtem Zugriff zu schützen:
+    - **Barcode-ID**: Identifikation des Schülers zur Zuordnung zur entsprechenden Person
+    - **Schülername**: Erforderlich, um die Barcode-ID mit dem Namen des Schülers zu verknüpfen
+    - **Zeitstempel (optional)**: Dokumentation des Scanvorgangs für interne Zwecke (z.B. zur Nachverfolgung von Scans)
 
-- **Lokale Speicherung:** Keine Übertragung an Dritte oder in die Cloud.
-- **Verschlüsselung:** Die Kommunikation zwischen Benutzer und Anwendung kann über HTTPS gesichert werden.
-- **Zugriffsbeschränkung:** Nur autorisierte Personen können auf die Daten zugreifen.
+    Die Daten werden **nicht nur lokal gespeichert**, sondern auch auf einem zentralen Server verarbeitet und gespeichert. Dieser Server ist durch **SSH-Verbindungen** gesichert, um sicherzustellen, dass der Datenverkehr zwischen den Geräten und dem Server verschlüsselt ist.
 
-## 6. Nutzung von Streamlit und Sicherheit
-Die Anwendung basiert auf **Streamlit**, einer Open-Source-Technologie für sichere Webanwendungen in Python. Streamlit ist darauf ausgelegt, eine einfache und sichere App-Entwicklung zu ermöglichen.
+    ## 3. Speicherung und Löschung der Daten
 
-Weitere Informationen zu Streamlit: [https://streamlit.io](https://streamlit.io)
+    - Die erfassten Daten werden auf einem **zentralen Server** gespeichert, der nur autorisierten Administratoren zugänglich ist.
+    - Für den sicheren Datentransfer wird eine **SSH-Verbindung** verwendet, die alle Daten verschlüsselt, um die Vertraulichkeit zu gewährleisten.
+    - Die Daten bleiben so lange gespeichert, wie dies für die Nutzung der Anwendung erforderlich ist, oder bis sie manuell vom Nutzer oder Administrator gelöscht werden.
+    - Eine Löschung der Daten kann jederzeit auf Anfrage durch den betroffenen Schüler oder Administrator erfolgen.
 
-## 7. Ihre Rechte als betroffene Person
-Nach der DSGVO haben Sie folgende Rechte in Bezug auf Ihre gespeicherten Daten:
+    ## 4. Sicherheit der Daten
 
-- **Recht auf Auskunft**: Sie können eine Kopie Ihrer gespeicherten Daten anfordern.
-- **Recht auf Berichtigung**: Falls Ihre Daten fehlerhaft sind, können Sie eine Korrektur verlangen.
-- **Recht auf Löschung**: Sie können verlangen, dass Ihre Daten dauerhaft gelöscht werden.
-- **Recht auf Einschränkung der Verarbeitung**: Unter bestimmten Bedingungen können Sie die Verarbeitung Ihrer Daten einschränken.
+    Der Schutz Ihrer personenbezogenen Daten wird durch geeignete technische und organisatorische Maßnahmen gewährleistet:
 
-Zur Geltendmachung Ihrer Rechte kontaktieren Sie uns bitte unter den oben angegebenen Kontaktdaten.
+    - **Zentrale Speicherung**: Alle Daten werden auf einem zentralen Server gespeichert, der vor unbefugtem Zugriff geschützt ist.
+    - **SSH-Verschlüsselung**: Die Datenübertragung zwischen den Geräten und dem Server erfolgt über eine sichere SSH-Verbindung.
+    - **Zugriffskontrollen**: Nur autorisierte Administratoren haben Zugang zu den gespeicherten Daten.
+    - **Datenverschlüsselung**: Für die Übertragung der Daten wird eine Verschlüsselung (z.B. HTTPS, SSH) empfohlen, um die Vertraulichkeit der Kommunikation zu sichern.
 
-## 8. Änderungen dieser Datenschutzerklärung
-Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren, um rechtliche Anforderungen oder neue Funktionalitäten der Anwendung zu berücksichtigen.
+    ## 5. Nutzung von Streamlit
 
-Letzte Aktualisierung: [Datum einfügen]
+    Diese Anwendung basiert auf **Streamlit**, einer Open-Source-Plattform, die es ermöglicht, interaktive Webanwendungen zu erstellen. Streamlit stellt sicher, dass die Anwendung sicher und datenschutzkonform betrieben werden kann. Weitere Informationen zu Streamlit finden Sie unter: [https://streamlit.io](https://streamlit.io)
+
+    ## 6. Ihre Rechte als betroffene Person
+
+    Im Hinblick auf die Verarbeitung Ihrer personenbezogenen Daten haben Sie gemäß der DSGVO folgende Rechte:
+
+    - **Recht auf Auskunft**: Sie können jederzeit Auskunft über die bei uns gespeicherten personenbezogenen Daten anfordern.
+    - **Recht auf Berichtigung**: Sollten Ihre Daten unrichtig oder unvollständig sein, können Sie eine Korrektur verlangen.
+    - **Recht auf Löschung**: Sie können die Löschung Ihrer Daten verlangen, soweit dies gesetzlich möglich ist.
+    - **Recht auf Einschränkung der Verarbeitung**: Unter bestimmten Bedingungen können Sie die Verarbeitung Ihrer personenbezogenen Daten einschränken.
+
+    Zur Wahrnehmung dieser Rechte können Sie sich jederzeit an die oben genannte verantwortliche Stelle wenden.
+
+    ## 7. Änderungen dieser Datenschutzerklärung
+
+    Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren. Eine Änderung erfolgt insbesondere bei Anpassungen an rechtliche Vorgaben oder der Erweiterung der Funktionen der Anwendung. Die jeweils aktuelle Version der Datenschutzerklärung wird auf dieser Seite veröffentlicht.
+
+    Letzte Aktualisierung: **[Datum einfügen]**
     """)
 
 # --- Cookies-Hinweis ---
