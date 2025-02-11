@@ -95,15 +95,15 @@ def impressum():
 def datenschutz():
     st.title("🔒 Datenschutz")
     st.markdown("""
-     **Datenschutzerklärung**
+    **Datenschutzerklärung**
 
-    Der Schutz Ihrer personenbezogenen Daten ist uns ein besonderes Anliegen. Nachfolgend möchten wir Sie darüber informieren, welche Daten im Rahmen der Nutzung der **Barcode-Scanner-Anwendung für Schülerregistrierung** verarbeitet werden, zu welchem Zweck diese erhoben werden und welche Rechte Ihnen als betroffene Person gemäß der Datenschutz-Grundverordnung (DSGVO) zustehen.
+    Der Schutz Ihrer personenbezogenen Daten ist uns ein besonderes Anliegen. Wir möchten, dass Sie sich beim Besuch unserer Webanwendung sicher und wohl fühlen. Daher nehmen wir den Schutz Ihrer Daten sehr ernst und erheben, verarbeiten und speichern Ihre personenbezogenen Daten ausschließlich gemäß der **Datenschutz-Grundverordnung (DSGVO)** sowie weiterer geltender Datenschutzgesetze.
 
-    Diese Anwendung wurde mit **Streamlit** entwickelt, einem Open-Source-Framework für Python-basierte Webanwendungen, das hohe Sicherheitsstandards erfüllt.
+    Im Folgenden möchten wir Sie ausführlich darüber informieren, wie und warum wir personenbezogene Daten im Rahmen der Nutzung der **Barcode-Scanner-Anwendung** für die Schülerregistrierung erheben, verarbeiten und speichern, sowie über Ihre Rechte als betroffene Person. Zudem erläutern wir, wie wir mit **Cookies** umgehen, die beim Einsatz der Anwendung verwendet werden.
 
-    ## 1. Verantwortliche Stelle
+    ### 1. Verantwortliche Stelle
 
-    Die verantwortliche Stelle für die Erhebung, Verarbeitung und Nutzung Ihrer personenbezogenen Daten im Rahmen dieser Anwendung ist:
+    Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten im Rahmen dieser Anwendung ist:
 
     **Bünyamin Dagdelen**  
     Im Johdorf 1  
@@ -112,54 +112,82 @@ def datenschutz():
     E-Mail: [dagdelenbunyamin023@gmail.com](mailto:dagdelenbunyamin023@gmail.com)  
     Telefon: +49 152 01476523
 
-    Wenn Sie Fragen zum Thema Datenschutz haben, können Sie sich jederzeit an die oben genannte Kontaktadresse wenden.
+    Für Fragen zum Thema Datenschutz können Sie sich jederzeit an die oben genannte Kontaktadresse wenden. Ihre Anfragen werden umgehend bearbeitet.
 
-    ## 2. Erhobene Daten und Verarbeitungszwecke
+    ### 2. Art und Umfang der erhobenen Daten
 
-    Wir erheben und verarbeiten ausschließlich die personenbezogenen Daten, die für die Nutzung der Barcode-Scanner-Anwendung erforderlich sind:
+    Wir erheben und verarbeiten ausschließlich die Daten, die für die Nutzung der **Barcode-Scanner-Anwendung** erforderlich sind. Dies umfasst insbesondere:
 
-    - **Barcode-ID**: Identifikation des Schülers zur Zuordnung zur entsprechenden Person
-    - **Schülername**: Erforderlich, um die Barcode-ID mit dem Namen des Schülers zu verknüpfen
-    - **Zeitstempel (optional)**: Dokumentation des Scanvorgangs für interne Zwecke (z.B. zur Nachverfolgung von Scans)
+    - **Barcode-ID**: Ein eindeutiger Identifikator, der dem jeweiligen Schüler zugeordnet wird, um diese Person eindeutig identifizieren zu können.
+    - **Schülername**: Zur Verknüpfung der Barcode-ID mit dem vollständigen Namen des Schülers, um die Identifikation zu ermöglichen.
+    - **Zeitstempel (optional)**: Ein Zeitstempel des Scans zur internen Dokumentation und Verfolgung der Nutzung (z.B. zur Nachverfolgung von Scan-Vorgängen).
 
-    Die Daten werden **nicht nur lokal gespeichert**, sondern auch auf einem zentralen Server verarbeitet und gespeichert. Dieser Server ist durch **SSH-Verbindungen** gesichert, um sicherzustellen, dass der Datenverkehr zwischen den Geräten und dem Server verschlüsselt ist.
+    Darüber hinaus verwenden wir **Cookies**, um den Benutzern die Anmeldung zu ermöglichen und deren Sitzung innerhalb der Anwendung aufrechtzuerhalten. Cookies ermöglichen es uns, Ihre Präferenzen zu speichern und die Benutzererfahrung zu verbessern. Sie werden vor der Nutzung der Anwendung um Ihre Zustimmung gebeten, um sicherzustellen, dass Sie der Verwendung von Cookies zustimmen.
 
-    ## 3. Speicherung und Löschung der Daten
+    #### 2.1. Zweck der Datenerhebung
 
-    - Die erfassten Daten werden auf einem **zentralen Server** gespeichert, der nur autorisierten Administratoren zugänglich ist.
-    - Für den sicheren Datentransfer wird eine **SSH-Verbindung** verwendet, die alle Daten verschlüsselt, um die Vertraulichkeit zu gewährleisten.
-    - Die Daten bleiben so lange gespeichert, wie dies für die Nutzung der Anwendung erforderlich ist, oder bis sie manuell vom Nutzer oder Administrator gelöscht werden.
-    - Eine Löschung der Daten kann jederzeit auf Anfrage durch den betroffenen Schüler oder Administrator erfolgen.
+    Die erhobenen personenbezogenen Daten werden ausschließlich zu folgenden Zwecken verarbeitet:
 
-    ## 4. Sicherheit der Daten
+    - **Authentifizierung und Benutzerverwaltung**: Die Barcode-ID und der Name des Schülers dienen der eindeutigen Identifikation des Benutzers, um eine sichere Anmeldung und die korrekte Zuordnung zur Anwendung zu gewährleisten.
+    - **Zeitliche Erfassung von Scan-Vorgängen**: Der Zeitstempel wird optional erfasst, um eine nachvollziehbare Dokumentation der Nutzung zu ermöglichen.
+    - **Verbesserung der Anwendung**: Die erhobenen Daten sowie Cookies tragen dazu bei, dass die Anwendung reibungslos funktioniert und der Benutzer sich während der Sitzung angemeldet und verifiziert bleibt.
 
-    Der Schutz Ihrer personenbezogenen Daten wird durch geeignete technische und organisatorische Maßnahmen gewährleistet:
+    ### 3. Rechtsgrundlage für die Datenverarbeitung
 
-    - **Zentrale Speicherung**: Alle Daten werden auf einem zentralen Server gespeichert, der vor unbefugtem Zugriff geschützt ist.
-    - **SSH-Verschlüsselung**: Die Datenübertragung zwischen den Geräten und dem Server erfolgt über eine sichere SSH-Verbindung.
-    - **Zugriffskontrollen**: Nur autorisierte Administratoren haben Zugang zu den gespeicherten Daten.
-    - **Datenverschlüsselung**: Für die Übertragung der Daten wird eine Verschlüsselung (z.B. HTTPS, SSH) empfohlen, um die Vertraulichkeit der Kommunikation zu sichern.
+    Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf Basis der **Datenschutz-Grundverordnung (DSGVO)**, insbesondere:
 
-    ## 5. Nutzung von Streamlit
+    - **Art. 6 Abs. 1 lit. a DSGVO** – Einwilligung: Ihre Zustimmung zur Verarbeitung der personenbezogenen Daten im Zusammenhang mit der Nutzung der Anwendung und der Zustimmung zu Cookies.
+    - **Art. 6 Abs. 1 lit. b DSGVO** – Vertragserfüllung: Die Daten werden verarbeitet, um Ihnen die Nutzung der Anwendung zu ermöglichen und Ihre Anmeldung zu verwalten.
 
-    Diese Anwendung basiert auf **Streamlit**, einer Open-Source-Plattform, die es ermöglicht, interaktive Webanwendungen zu erstellen. Streamlit stellt sicher, dass die Anwendung sicher und datenschutzkonform betrieben werden kann. Weitere Informationen zu Streamlit finden Sie unter: [https://streamlit.io](https://streamlit.io)
+    ### 4. Speicherung und Löschung der Daten
 
-    ## 6. Ihre Rechte als betroffene Person
+    Die erhobenen Daten werden auf einem **zentralen, sicheren Server** gespeichert, der nur autorisierten Administratoren zugänglich ist. Alle Daten werden gemäß den geltenden Sicherheitsstandards und unter Berücksichtigung der **DSGVO** verarbeitet.
 
-    Im Hinblick auf die Verarbeitung Ihrer personenbezogenen Daten haben Sie gemäß der DSGVO folgende Rechte:
+    - **Speicherfrist**: Die Daten werden nur so lange gespeichert, wie dies für die Nutzung der Anwendung erforderlich ist, oder bis sie auf Antrag des Benutzers oder eines Administrators gelöscht werden.
+    - **Löschung auf Anfrage**: Sie können jederzeit die Löschung Ihrer Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Diese Anfrage können Sie über die oben angegebenen Kontaktinformationen stellen.
 
-    - **Recht auf Auskunft**: Sie können jederzeit Auskunft über die bei uns gespeicherten personenbezogenen Daten anfordern.
-    - **Recht auf Berichtigung**: Sollten Ihre Daten unrichtig oder unvollständig sein, können Sie eine Korrektur verlangen.
-    - **Recht auf Löschung**: Sie können die Löschung Ihrer Daten verlangen, soweit dies gesetzlich möglich ist.
-    - **Recht auf Einschränkung der Verarbeitung**: Unter bestimmten Bedingungen können Sie die Verarbeitung Ihrer personenbezogenen Daten einschränken.
+    Für die Sicherstellung des Schutzes und der Integrität Ihrer Daten wird die **SSH-Verschlüsselung** verwendet. Alle übertragenen Daten zwischen den Benutzern und dem Server sind dadurch verschlüsselt.
 
-    Zur Wahrnehmung dieser Rechte können Sie sich jederzeit an die oben genannte verantwortliche Stelle wenden.
+    ### 5. Nutzung von Cookies
 
-    ## 7. Änderungen dieser Datenschutzerklärung
+    **Cookies** sind kleine Textdateien, die beim Besuch einer Website auf Ihrem Endgerät gespeichert werden. Diese ermöglichen es, dass die Anwendung sich an Ihre Einstellungen und Präferenzen erinnert und eine verbesserte Benutzererfahrung bietet. Wir verwenden **essenzielle Cookies**, die unbedingt erforderlich sind, um die grundlegenden Funktionen der Anwendung wie das Login und die Sitzung zu ermöglichen.
 
-    Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren. Eine Änderung erfolgt insbesondere bei Anpassungen an rechtliche Vorgaben oder der Erweiterung der Funktionen der Anwendung. Die jeweils aktuelle Version der Datenschutzerklärung wird auf dieser Seite veröffentlicht.
+    - **Login-Cookies**: Diese Cookies speichern Ihre Anmeldedaten, sodass Sie nicht bei jedem Besuch erneut eingeloggt werden müssen.
+    - **Sitzungs-Cookies**: Diese Cookies ermöglichen es, dass Ihre Sitzung aufrechterhalten wird, während Sie durch die Anwendung navigieren.
+  
+    Beim ersten Besuch der Anwendung wird ein Cookie-Banner angezeigt, in dem Sie um Ihre Zustimmung zur Verwendung von Cookies gebeten werden. Wenn Sie der Verwendung zustimmen, setzen wir die notwendigen Cookies. Sie können diese Einwilligung jederzeit widerrufen, indem Sie die Cookies in den **Browser-Einstellungen** löschen.
 
-    Letzte Aktualisierung: **11.02.2025**
+    Weitere Informationen zu den verwendeten Cookies finden Sie im Cookie-Manager der Anwendung.
+
+    ### 6. Sicherheit der Daten
+
+    Der Schutz Ihrer personenbezogenen Daten wird durch **technische und organisatorische Maßnahmen** gewährleistet, die einen sicheren Umgang mit den Daten sicherstellen:
+
+    - **Verschlüsselung**: Alle übertragenen Daten werden durch **SSH-** oder **HTTPS-Verschlüsselung** gesichert.
+    - **Zugriffskontrollen**: Nur autorisierte Administratoren haben Zugriff auf die gespeicherten Daten.
+    - **Backup und Recovery**: Es werden regelmäßige Backups durchgeführt, um Daten im Falle eines technischen Problems wiederherstellen zu können.
+
+    ### 7. Ihre Rechte als betroffene Person
+
+    Im Hinblick auf die Verarbeitung Ihrer personenbezogenen Daten haben Sie gemäß der **DSGVO** folgende Rechte:
+
+    - **Recht auf Auskunft**: Sie haben das Recht, jederzeit Auskunft über die gespeicherten personenbezogenen Daten zu verlangen.
+    - **Recht auf Berichtigung**: Sollten Ihre Daten unrichtig oder unvollständig sein, haben Sie das Recht, eine Berichtigung zu verlangen.
+    - **Recht auf Löschung**: Sie können jederzeit die Löschung Ihrer Daten verlangen, soweit keine gesetzlichen Aufbewahrungspflichten bestehen.
+    - **Recht auf Einschränkung der Verarbeitung**: Unter bestimmten Umständen können Sie die Verarbeitung Ihrer personenbezogenen Daten einschränken lassen.
+    - **Recht auf Datenübertragbarkeit**: Sie haben das Recht, Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.
+  
+    Für die Wahrnehmung dieser Rechte können Sie sich jederzeit an die oben genannte verantwortliche Stelle wenden.
+
+    ### 8. Verwendung von Drittanbietern und Links zu externen Webseiten
+
+    Unsere Anwendung verwendet **keine externen Drittanbieter** für die Verarbeitung Ihrer personenbezogenen Daten, außer die Plattform **Streamlit**, die die zugrunde liegende Infrastruktur bereitstellt. Wir übernehmen keine Verantwortung für den Inhalt und die Datenschutzpraktiken von externen Webseiten, die möglicherweise über Links auf unserer Anwendung zugänglich sind.
+
+    ### 9. Änderungen dieser Datenschutzerklärung
+
+    Wir behalten uns vor, diese Datenschutzerklärung regelmäßig zu aktualisieren, insbesondere wenn neue rechtliche Anforderungen bestehen oder wenn die Funktionen der Anwendung erweitert werden. Alle Änderungen werden auf dieser Seite veröffentlicht, und wir empfehlen, diese regelmäßig zu überprüfen.
+
+    **Letzte Aktualisierung**: **11.02.2025**
     """)
 
 # --- Cookies-Hinweis ---
