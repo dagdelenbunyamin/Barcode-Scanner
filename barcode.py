@@ -83,10 +83,10 @@ def impressum():
     **Verantwortlich für den Inhalt:**
     
     Bünyamin Dagdelen  
-    Im Johdorf 1  
-    53227 Bonn  
+    ....  
+    ......
     Deutschland  
-    E-Mail: dagdelenbunyamin023@gmail.com
+    E-Mail: .....
     """)
 
 def datenschutz():
@@ -103,11 +103,11 @@ def datenschutz():
     Die verantwortliche Stelle für die Erhebung, Verarbeitung und Nutzung Ihrer personenbezogenen Daten im Rahmen dieser Anwendung ist:
 
     **Bünyamin Dagdelen**  
-    Im Johdorf 1  
-    53227 Bonn  
+    .....  
+    .......
     Deutschland  
-    E-Mail: [dagdelenbunyamin023@gmail.com](mailto:dagdelenbunyamin023@gmail.com)  
-    Telefon: +49 152 01476523
+    E-Mail: [.....](mailto:.....)  
+    Telefon: .......
 
     Wenn Sie Fragen zum Thema Datenschutz haben, können Sie sich jederzeit an die oben genannte Kontaktadresse wenden.
 
